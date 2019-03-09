@@ -1,0 +1,50 @@
+.login {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(47,64,80);
+}
+.login-wrap {
+    position: relative;
+    width: 380px;
+    height: 270px;
+    background-color: #fff;
+    margin: 180px auto;
+    padding: 100px 40px 0px 40px;
+    border-radius: 5px;
+}
+.login-wrap img {
+    position: absolute;
+    left: 120px;
+    top: -60px;
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    border: 10px solid #fff;
+    box-sizing: border-box;
+    box-shadow: 0 0 3px #999;
+}
+.login-wrap input {
+    width: 300px;
+    height: 35px;
+    box-sizing: border-box;
+}
+.login-wrap a {
+    width: 300px;
+}
+
+/*首页样式*/
+.main {
+    position: relative;
+    min-width: 844px;
+    min-height: 100vh;
+    padding-left: 180px;
+}
+.aside {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 180px;
+    height: 100%;
+    background-color: rgb(36,52,62);
+}
