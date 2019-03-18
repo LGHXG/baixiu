@@ -1,29 +1,94 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-  <meta charset="utf-8">
-  <title>Sign in &laquo; Admin</title>
-  <link rel="stylesheet" href="../assets/vendors/bootstrap/css/bootstrap.css">
-  <link rel="stylesheet" href="../assets/css/admin.css">
+    <meta charset="utf-8">
+    <title>Sign in &laquo; Admin</title>
+    <link rel="stylesheet" href="../assets/vendors/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="../assets/css/admin.css">
 </head>
 <body>
-  <div class="login">
+<div class="login">
     <form class="login-wrap">
-      <img class="avatar" src="../assets/img/default.png">
-      <!-- 有错误信息时展示 -->
-      <!-- <div class="alert alert-danger">
-        <strong>错误！</strong> 用户名或密码错误！
-      </div> -->
-      <div class="form-group">
-        <label for="email" class="sr-only">邮箱</label>
-        <input id="email" type="email" class="form-control" placeholder="邮箱" autofocus>
-      </div>
-      <div class="form-group">
-        <label for="password" class="sr-only">密码</label>
-        <input id="password" type="password" class="form-control" placeholder="密码">
-      </div>
-      <a class="btn btn-primary btn-block" href="index.html">登 录</a>
+        <img class="avatar" src="../assets/img/default.png">
+        <!-- 有错误信息时展示 -->
+        <div v-bind:class="{alert:true,'alert-danger': hasError, 'alert-success': !hasError}" v-show="tips">
+            {{tips}}
+        </div>
+        <div class="form-group">
+            <label for="email" class="sr-only">邮箱</label>
+            <input  id="email" type="email" class="form-control" placeholder="邮箱" autofocus  @input="input" @keyup.delete="resumeEmail" v-model.lazy="email">
+        </div>
+        <div class="form-group">
+            <label for="password" class="sr-only">密码</label>
+            <input id="password" type="password" class="form-control" placeholder="密码" @input="input" @keyup.delete="resumePassword" v-model.lazy="password">
+        </div>
+        <a class="btn btn-primary btn-block" href="javascript:;" @click.prevent="submit">登 录</a>
     </form>
-  </div>
+</div>
+<script src="../assets/vendors/vue/vue.js"></script>
+<script>
+    let vm = new Vue({
+        el: 'form',
+        data: {
+            email: '',
+            password: '',
+            tips: '',
+            emailList: ['admin@me.com', 'member@me.com'],
+            passwordList: ['123456', '654321'],
+            emailError: false,
+            passwordError: false,
+            hasError: true
+        },
+        watch: {
+            email: function (value) {
+                // 判断当前邮箱是否存在
+                if (this.emailList.indexOf(value) === -1) {
+                    this.emailError = true;
+                    this.tips = '邮箱不存在！';
+                } else {
+                    this.emailError = false;
+                    this.tips = '邮箱验证通过！';
+                    this.hasError = false;
+                }
+            },
+            password: function (value) {
+                if (this.emailError === true) {
+                    this.tips = '请输入邮箱！';
+                } else if (this.passwordList[this.emailList.indexOf(this.email)] !== value) {
+                    this.passwordError = true;
+                    this.tips = '密码错误！';
+                } else {
+                    this.passwordError = false;
+                    this.tips = '密码验证通过！';
+                    this.hasError = false;
+                }
+            }
+        },
+        methods: {
+            submit: function () {
+                // 非空判断
+                if (this.email.length === 0 || this.password.length === 0) {
+                    this.tips = '邮箱或密码不能为空';
+                    document.getElementsByTagName('input')[0].focus();
+                } else if (this.emailError === false && this.passwordError === false) {
+                    this.tips = '验证成功，正在跳转...';
+                    this.hasError = false;
+                    top.window.location.href = "index.html";
+                } else {
+                    this.tips = '邮箱和密码错误';
+                }
+            },
+            input: function () {
+                this.tips = '';
+            },
+            resumeEmail: function () {
+                this.emailError = false;
+            },
+            resumePassword: function () {
+                this.emailError = false;
+            }
+        }
+    })
+</script>
 </body>
 </html>
