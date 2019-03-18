@@ -45,6 +45,7 @@
                 if (this.emailList.indexOf(value) === -1) {
                     this.emailError = true;
                     this.tips = '邮箱不存在！';
+                    this.hasError = true;
                 } else {
                     this.emailError = false;
                     this.tips = '邮箱验证通过！';
@@ -57,6 +58,7 @@
                 } else if (this.passwordList[this.emailList.indexOf(this.email)] !== value) {
                     this.passwordError = true;
                     this.tips = '密码错误！';
+                    this.hasError = true;
                 } else {
                     this.passwordError = false;
                     this.tips = '密码验证通过！';
@@ -69,6 +71,7 @@
                 // 非空判断
                 if (this.email.length === 0 || this.password.length === 0) {
                     this.tips = '邮箱或密码不能为空';
+                    this.hasError = true;
                     document.getElementsByTagName('input')[0].focus();
                 } else if (this.emailError === false && this.passwordError === false) {
                     this.tips = '验证成功，正在跳转...';
@@ -76,6 +79,7 @@
                     top.window.location.href = "index.html";
                 } else {
                     this.tips = '邮箱和密码错误';
+                    this.hasError = true;
                 }
             },
             input: function () {
