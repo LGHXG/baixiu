@@ -535,7 +535,7 @@ img {
 }
 
 .topnav li a.active {
-  color: #ff5e52;
+  color: #243443;
 }
 
 .header {
@@ -549,7 +549,7 @@ img {
   width: 100%;
   height: 120px;
   text-indent: -2000px;
-  background: #ff5e52;
+  background: #243443;
 }
 
 .header .logo a {
@@ -574,7 +574,7 @@ img {
 }
 
 .header .nav a.active {
-  color: #ff5e52;
+  color: #243443;
 }
 
 .header .nav .fa {
@@ -618,7 +618,7 @@ img {
   height: 34px;
   border: 0 none;
   color: #fff;
-  background-color: #ff5e52;
+  background-color: #243443;
   opacity: .85;
 }
 
@@ -742,7 +742,7 @@ img {
   line-height: 32px;
   font-size: 20px;
   font-weight: 600;
-  border-bottom: 2px solid #ff5e52;
+  border-bottom: 2px solid #243443;
 }
 
 .content .focus {
@@ -788,7 +788,7 @@ img {
 }
 
 .content .focus li:hover span {
-  background-color: #ff5e52;
+  background-color: #243443;
 }
 
 .content .focus li.large span {
@@ -841,7 +841,7 @@ img {
 }
 
 .content .top a:hover {
-  color: #ff5e52;
+  color: #243443;
 }
 
 .content .top span,
@@ -877,7 +877,7 @@ img {
 }
 
 .content .hots li a:hover {
-  color: #ff5e52;
+  color: #243443;
 }
 
 .content .hots li img {
@@ -927,7 +927,7 @@ img {
 }
 
 .content .panel .head a:hover {
-  color: #ff5e52;
+  color: #243443;
 }
 
 .content .panel .head .sort {
@@ -939,7 +939,7 @@ img {
   margin-right: 10px;
   float: left;
   color: #fff;
-  background-color: #ff5e52;
+  background-color: #243443;
   font-size: 12px;
 }
 
@@ -951,7 +951,7 @@ img {
   content: '';
   border-width: 4px;
   border-style: solid;
-  border-color: transparent transparent transparent #ff5e52;
+  border-color: transparent transparent transparent #243443;
 }
 
 .content .panel .main {
@@ -992,7 +992,7 @@ img {
 }
 
 .content .extra .like:hover {
-  color: #ff5e52;
+  color: #243443;
 }
 
 .content .extra a span {
@@ -1000,7 +1000,7 @@ img {
 }
 
 .content .tags span:hover {
-  color: #ff5e52;
+  color: #243443;
 }
 
 .content .entry p {
@@ -1062,7 +1062,7 @@ img {
 }
 
 .content .breadcrumb a:hover {
-  color: #ff5e52;
+  color: #243443;
 }
 
 .content .article .title {
@@ -1093,7 +1093,7 @@ img {
 }
 
 .content .article .meta a:hover {
-  color: #ff5e52;
+  color: #243443;
 }
 
 .aside {
@@ -1112,7 +1112,7 @@ img {
 .aside .widgets h4 {
   margin-bottom: 5px;
   font-size: 20px;
-  border-bottom: 2px solid #ff5e52;
+  border-bottom: 2px solid #243443;
   float: left;
 }
 
@@ -1153,7 +1153,7 @@ img {
   text-align: center;
   color: #fff;
   border: 0 none;
-  background-color: #ff5e52;
+  background-color: #243443;
   opacity: 0.85;
 }
 
@@ -1200,7 +1200,7 @@ img {
 }
 
 .aside .random li:hover .title {
-  color: #ff5e52;
+  color: #243443;
 }
 
 .aside .discuz li {
